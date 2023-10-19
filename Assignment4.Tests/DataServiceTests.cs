@@ -44,7 +44,7 @@ public class DataServiceTests
         // cleanup
         service.DeleteCategory(category.Id);
     }
-#if comment
+
     [Fact]
     public void DeleteCategory_ValidId_RemoveTheCategory()
     {
@@ -82,6 +82,7 @@ public class DataServiceTests
         service.DeleteCategory(category.Id);
     }
 
+#if comment
     [Fact]
     public void UpdateCategory_InvalidID_ReturnsFalse()
     {
