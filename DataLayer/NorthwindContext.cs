@@ -8,7 +8,7 @@ public class NorthwindContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql("host=localhost;db=northwind; uid=postgres; pwd=chili321");
+        optionsBuilder.UseNpgsql("host=localhost;db=northwind; uid=postgres; pwd=paranormalA1");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
