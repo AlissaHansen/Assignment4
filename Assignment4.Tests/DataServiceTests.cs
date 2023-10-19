@@ -82,7 +82,7 @@ public class DataServiceTests
         service.DeleteCategory(category.Id);
     }
 
-#if comment
+
     [Fact]
     public void UpdateCategory_InvalidID_ReturnsFalse()
     {
@@ -90,7 +90,7 @@ public class DataServiceTests
         var result = service.UpdateCategory(-1, "UpdatedName", "UpdatedDescription");
         Assert.False(result);
     }
-
+#if comment
 
     /* products */
 

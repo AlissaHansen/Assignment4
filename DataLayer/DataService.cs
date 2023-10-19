@@ -49,6 +49,8 @@ public class DataService
 
     public bool UpdateCategory(int Id, string name, string description)
     {
+        if (Id < 0) return false;
+
         var db = new NorthwindContext();
 
         DeleteCategory(Id);
