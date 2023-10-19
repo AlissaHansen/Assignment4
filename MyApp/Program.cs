@@ -8,3 +8,4 @@ foreach (var entity in categories)
 {
     Console.WriteLine(entity);
 }
+
