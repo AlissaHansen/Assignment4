@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
+
 namespace DataLayer;
 
 public class DataService
@@ -117,5 +119,26 @@ public class DataService
             })
             .ToList();
     }
-    public IList<>
+
+    public Order? GetOrder(int searchId)
+    {
+        var db = new NorthwindContext();
+        var order = db.Orders
+            .Where(o => o.Id == searchId)
+            .SingleOrDefault();
+
+        if (order != null)
+        {
+            // Load related order details and products
+            db.Entry(order)
+                .Collection(o => o.OrderDetails)
+                .Query()
+                .Include(od => od.Product.Category)
+                .Load();
+        }
+
+        return order;
+    
+    }
+
 }

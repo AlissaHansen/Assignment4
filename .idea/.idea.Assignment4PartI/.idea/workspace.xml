@@ -10,6 +10,8 @@
     <list default="true" id="fdd963d9-0ff0-4ea4-bebf-1dcced6a13a6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Assignment4PartI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assignment4PartI/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataLayer/DataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataLayer/DataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataLayer/NorthwindContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataLayer/NorthwindContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataLayer/OrderDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataLayer/OrderDetail.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
