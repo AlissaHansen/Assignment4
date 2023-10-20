@@ -100,4 +100,21 @@ public class DataService
             })
             .ToList();
     }
+
+    public IList<ProductAndCategoryInfo> GetProductByName(string searchString)
+    {
+        var db = new NorthwindContext();
+        return db.Products
+            .Where(product => product.Name.Contains(searchString))
+            .Select(product => new ProductAndCategoryInfo
+            {
+                ProductId = product.Id,
+                ProductName = product.Name,
+                UnitPrice = product.UnitPrice,
+                QuantityPerUnit = product.QuantityPerUnit,
+                UnitsInStock = product.UnitsInStock,
+                CategoryName = product.Category.Name
+            })
+            .ToList();
+    }
 }
