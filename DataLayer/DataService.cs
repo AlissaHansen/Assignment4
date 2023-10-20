@@ -1,5 +1,4 @@
-﻿using System.Runtime.Intrinsics.X86;
-
+﻿
 namespace DataLayer;
 
 public class DataService
@@ -64,4 +63,8 @@ public class DataService
         db.Add(category);
         return db.SaveChanges() > 0;
     }
+    public Product? GetProduct(int productId)
+    {
+        var db = new NorthwindContext();
+        return db.Products.FirstOrDefault()
 }

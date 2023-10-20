@@ -90,7 +90,7 @@ public class DataServiceTests
         var result = service.UpdateCategory(-1, "UpdatedName", "UpdatedDescription");
         Assert.False(result);
     }
-#if comment
+
 
     /* products */
 
@@ -104,7 +104,7 @@ public class DataServiceTests
         Assert.Null(product.QuantityPerUnit);
         Assert.Equal(0, product.UnitsInStock);
     }
-
+    
     [Fact]
     public void GetProduct_ValidId_ReturnsProductWithCategory()
     {
@@ -113,7 +113,7 @@ public class DataServiceTests
         Assert.Equal("Chai", product.Name);
         Assert.Equal("Beverages", product.CategoryName);
     }
-
+#if comment
     [Fact]
     public void GetProductsByCategory_ValidId_ReturnsProductWithCategory()
     {
