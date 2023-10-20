@@ -1,3 +1,4 @@
+using System.Linq;
 using DataLayer;
 namespace Assignment4.Tests;
 
@@ -113,7 +114,7 @@ public class DataServiceTests
         Assert.Equal("Chai", product.Name);
         Assert.Equal("Beverages", product.CategoryName);
     }
-#if comment
+
     [Fact]
     public void GetProductsByCategory_ValidId_ReturnsProductWithCategory()
     {
@@ -122,8 +123,9 @@ public class DataServiceTests
         Assert.Equal(12, products.Count);
         Assert.Equal("Chai", products.First().Name);
         Assert.Equal("Beverages", products.First().CategoryName);
-        Assert.Equal("Lakkalik��ri", products.Last().Name);
+        Assert.Equal("Lakkalikööri", products.Last().Name);
     }
+#if comment
 
     [Fact]
     public void GetProduct_NameSubString_ReturnsProductsThatMatchesTheSubString()

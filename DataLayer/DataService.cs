@@ -83,6 +83,21 @@ public class DataService
             })
             .FirstOrDefault();
     }
-    
-    
+
+    public IList<ProductWithCategoryInfo> GetProductByCategory(int categoryId)
+    {
+        var db = new NorthwindContext();
+        return db.Products
+            .Where(product => product.CategoryId == categoryId)
+            .Select(product => new ProductWithCategoryInfo
+            {
+                ProductId = product.Id,
+                Name = product.Name,
+                UnitPrice = product.UnitPrice,
+                QuantityPerUnit = product.QuantityPerUnit,
+                UnitsInStock = product.UnitsInStock,
+                CategoryName = product.Category.Name
+            })
+            .ToList();
+    }
 }
