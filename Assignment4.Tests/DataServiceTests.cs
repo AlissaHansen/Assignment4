@@ -125,7 +125,6 @@ public class DataServiceTests
         Assert.Equal("Beverages", products.First().CategoryName);
         Assert.Equal("Lakkalikööri", products.Last().Name);
     }
-#if comment
 
     [Fact]
     public void GetProduct_NameSubString_ReturnsProductsThatMatchesTheSubString()
@@ -133,11 +132,11 @@ public class DataServiceTests
         var service = new DataService();
         var products = service.GetProductByName("em");
         Assert.Equal(4, products.Count);
-        Assert.Equal("NuNuCa Nu�-Nougat-Creme", products.First().ProductName);
+        Assert.Equal("NuNuCa Nuß-Nougat-Creme", products.First().ProductName);
         Assert.Equal("Confections", products.First().CategoryName);
         Assert.Equal("Flotemysost", products.Last().ProductName);
     }
-
+#if comment
     /* orders */
     [Fact]
     public void Order_Object_HasIdDatesAndOrderDetails()
