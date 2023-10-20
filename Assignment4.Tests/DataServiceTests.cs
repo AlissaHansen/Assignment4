@@ -136,7 +136,7 @@ public class DataServiceTests
         Assert.Equal("Confections", products.First().CategoryName);
         Assert.Equal("Flotemysost", products.Last().ProductName);
     }
-#if comment
+
     /* orders */
     [Fact]
     public void Order_Object_HasIdDatesAndOrderDetails()
@@ -149,7 +149,7 @@ public class DataServiceTests
         Assert.Null(order.ShipName);
         Assert.Null(order.ShipCity);
     }
-
+#if comment
     [Fact]
     public void GetOrder_ValidId_ReturnsCompleteOrder()
     {
