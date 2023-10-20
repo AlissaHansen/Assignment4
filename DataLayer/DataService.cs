@@ -14,10 +14,12 @@ public class DataService
         var db = new NorthwindContext();
         return db.Categories.FirstOrDefault(x => x.Id == categoryId);
     }
+
     public bool DeleteCategory(Category category)
     {
         return DeleteCategory(category.Id);
     }
+
     public bool DeleteCategory(int categoryId)
     {
         var db = new NorthwindContext();
@@ -28,6 +30,7 @@ public class DataService
             //db.Remove(category);
             return db.SaveChanges() > 0;
         }
+
         return false;
     }
 
@@ -63,8 +66,23 @@ public class DataService
         db.Add(category);
         return db.SaveChanges() > 0;
     }
-    public Product? GetProduct(int productId)
+
+    public ProductWithCategoryInfo? GetProduct(int productId)
     {
         var db = new NorthwindContext();
-        return db.Products.FirstOrDefault()
+        return db.Products
+            .Where(product => product.Id == productId)
+            .Select(product => new ProductWithCategoryInfo
+            {
+                ProductId = product.Id,
+                Name = product.Name,
+                UnitPrice = product.UnitPrice,
+                QuantityPerUnit = product.QuantityPerUnit,
+                UnitsInStock = product.UnitsInStock,
+                CategoryName = product.Category.Name
+            })
+            .FirstOrDefault();
+    }
+    
+    
 }
