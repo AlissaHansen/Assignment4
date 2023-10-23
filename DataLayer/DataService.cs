@@ -120,25 +120,19 @@ public class DataService
             .ToList();
     }
 
-    public Order? GetOrder(int searchId)
+    public Order? GetOrder(int Id)
     {
         var db = new NorthwindContext();
-        var order = db.Orders
-            .Where(o => o.Id == searchId)
-            .SingleOrDefault();
 
-        if (order != null)
+        foreach (var entity in db.Orders
+                     .Include(y => y.OrderDetails)
+                     .ThenInclude(z => z.Product)
+                     .ThenInclude(x => x.Category)
+                     .Where(a => a.Id == Id))
         {
-            // Load related order details and products
-            db.Entry(order)
-                .Collection(o => o.OrderDetails)
-                .Query()
-                .Include(od => od.Product.Category)
-                .Load();
+            return entity;
         }
-
-        return order;
-    
+        return null;
     }
 
 }

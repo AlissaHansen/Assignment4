@@ -10,4 +10,9 @@ public class OrderDetail
     public int OrderId { get; set; }
     
     public Order Order { get; set; }
+    
+    public override string ToString()
+    {
+        return $"{UnitPrice}, {Quantity}, {Discount},{ProductId}, {Order}";
+    }
 }

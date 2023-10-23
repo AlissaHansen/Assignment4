@@ -2,10 +2,10 @@
 
 var ds = new DataService();
 
-var categories = ds.GetCategories();
+var order = ds.GetOrder(10748);
 
-foreach (var entity in categories) 
+foreach (var item in order.OrderDetails)
 {
-    Console.WriteLine(entity);
+    Console.WriteLine(item.ToString());
 }
 

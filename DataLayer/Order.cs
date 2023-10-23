@@ -10,4 +10,9 @@ public class Order
     public string ShipName { get; set; }
     public string ShipCity { get; set; }
     public ICollection<OrderDetail> OrderDetails { get; set; }
+    
+    public override string ToString()
+    {
+        return $"{Id}, {Date}, {Required},{Shipped}, {Freight}, {ShipName}, {ShipCity}";
+    }
 }
