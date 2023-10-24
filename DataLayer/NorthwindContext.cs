@@ -8,7 +8,7 @@ public class NorthwindContext : DbContext
     public DbSet<Category> Categories { get; set; }
     public DbSet<Product> Products { get; set; }
     
-    public DbSet<OrderDetail> OrderDetails { get; set; }
+    public DbSet<OrderDetails> OrderDetails { get; set; }
     
     public DbSet<Order> Orders { get; set; }
 
@@ -32,13 +32,13 @@ public class NorthwindContext : DbContext
         modelBuilder.Entity<Product>().Property(x => x.UnitsInStock).HasColumnName("unitsinstock");
         modelBuilder.Entity<Product>().Property(x => x.CategoryId).HasColumnName("categoryid");
         
-        modelBuilder.Entity<OrderDetail>().ToTable("orderdetails");
-        modelBuilder.Entity<OrderDetail>().Property(x => x.UnitPrice).HasColumnName("unitprice");
-        modelBuilder.Entity<OrderDetail>().Property(x => x.Quantity).HasColumnName("quantity");
-        modelBuilder.Entity<OrderDetail>().Property(x => x.Discount).HasColumnName("discount");
-        modelBuilder.Entity<OrderDetail>().Property(x => x.ProductId).HasColumnName("productid");
-        modelBuilder.Entity<OrderDetail>().Property(x => x.OrderId).HasColumnName("orderid");
-        modelBuilder.Entity<OrderDetail>().HasKey(x => new { x.ProductId, x.OrderId });
+        modelBuilder.Entity<OrderDetails>().ToTable("orderdetails");
+        modelBuilder.Entity<OrderDetails>().Property(x => x.UnitPrice).HasColumnName("unitprice");
+        modelBuilder.Entity<OrderDetails>().Property(x => x.Quantity).HasColumnName("quantity");
+        modelBuilder.Entity<OrderDetails>().Property(x => x.Discount).HasColumnName("discount");
+        modelBuilder.Entity<OrderDetails>().Property(x => x.ProductId).HasColumnName("productid");
+        modelBuilder.Entity<OrderDetails>().Property(x => x.OrderId).HasColumnName("orderid");
+        modelBuilder.Entity<OrderDetails>().HasKey(x => new { x.ProductId, x.OrderId });
         
         modelBuilder.Entity<Order>().ToTable("orders");
         modelBuilder.Entity<Order>().Property(x => x.Id).HasColumnName("orderid");

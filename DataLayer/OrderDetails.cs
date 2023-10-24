@@ -1,6 +1,6 @@
 namespace DataLayer;
 
-public class OrderDetail
+public class OrderDetails
 {
     public int UnitPrice { get; set; }
     public int Quantity { get; set; }

@@ -10,7 +10,7 @@ public class Product
     public int CategoryId { get; set; }
     public Category Category { get; set; }
     
-    public OrderDetail OrderDetail { get; set; }
+    public OrderDetails OrderDetails { get; set; }
 
     public override string ToString()
     {

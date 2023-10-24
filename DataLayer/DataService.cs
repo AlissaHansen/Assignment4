@@ -120,19 +120,45 @@ public class DataService
             .ToList();
     }
 
-    public Order? GetOrder(int Id)
+    public Order? GetOrder(int searchId)
     {
         var db = new NorthwindContext();
 
-        foreach (var entity in db.Orders
-                     .Include(y => y.OrderDetails)
-                     .ThenInclude(z => z.Product)
-                     .ThenInclude(x => x.Category)
-                     .Where(a => a.Id == Id))
+        foreach (var item in db.Orders
+                     .Include(od => od.OrderDetails)
+                     .ThenInclude(p => p.Product)
+                     .ThenInclude(c => c.Category)
+                     .Where(x => x.Id == searchId))
         {
-            return entity;
+            return item;
         }
         return null;
     }
 
-}
+    public IList<Order> GetOrders()
+    {
+        var db = new NorthwindContext();
+        return db.Orders.ToList();
+    }
+
+    public IList<OrderDetails> GetOrderDetailsByOrderId(int searchId)
+    {
+        var db = new NorthwindContext();
+        return db.OrderDetails
+            .Where(x => x.OrderId == searchId)
+            .Include(p => p.Product)
+            .ToList();
+    }
+
+    public IList<OrderDetails> GetOrderDetailsByProductId(int searchId)
+    {
+        var db = new NorthwindContext();
+        return db.OrderDetails
+            .Where(x => x.ProductId == searchId)
+            .Include(o => o.Order)
+            .OrderBy(x=>x.OrderId)
+            .ToList();
+    }
+    
+    
+}   

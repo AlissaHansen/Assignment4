@@ -9,11 +9,12 @@
   <component name="ChangeListManager">
     <list default="true" id="fdd963d9-0ff0-4ea4-bebf-1dcced6a13a6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Assignment4PartI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assignment4PartI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment4.Tests/DataServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment4.Tests/DataServiceTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataLayer/DataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataLayer/DataService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataLayer/NorthwindContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataLayer/NorthwindContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataLayer/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataLayer/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataLayer/OrderDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataLayer/OrderDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataLayer/OrderDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataLayer/OrderDetails.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataLayer/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataLayer/Product.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,5 +102,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet Exception Breakpoints">
+          <properties exception="System.InvalidCastException" isInternal="false" displayValue="InvalidCastException" namespaceName="System">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

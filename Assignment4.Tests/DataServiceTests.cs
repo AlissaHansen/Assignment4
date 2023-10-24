@@ -159,7 +159,7 @@ public class DataServiceTests
         Assert.Equal("Queso Cabrales", order.OrderDetails?.First().Product?.Name);
         Assert.Equal("Dairy Products", order.OrderDetails?.First().Product?.Category?.Name);
     }
-#if comment
+
     [Fact]
     public void GetOrders()
     {
@@ -205,5 +205,5 @@ public class DataServiceTests
         Assert.Equal(14, orderDetails.First().UnitPrice);
         Assert.Equal(12, orderDetails.First().Quantity);
     }
-#endif
+
 }
